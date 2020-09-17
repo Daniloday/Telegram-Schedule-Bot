@@ -33,6 +33,7 @@ def send(bot):
 def main():
     bot = TelegramBot("https://api.telegram.org/bot1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs/")
     lessons = custom_schedule.create_schedule()
+    send()
     while True:
         time.sleep(1)
         for lesson in lessons:
