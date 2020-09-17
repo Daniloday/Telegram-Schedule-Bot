@@ -26,8 +26,8 @@ class TelegramBot():
         return response
 
 def send(bot):
-    chat_id = -1001367674629
-    bot.send_message(chat_id, "anime")
+    chat_id = -1001187367399
+    bot.send_message(chat_id, "Hello world!")
 
 def main():
     bot = TelegramBot("https://api.telegram.org/bot1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs/")
@@ -38,7 +38,7 @@ def main():
         for lesson in lessons:
             if lesson.day == time.strftime("%w") and lesson.time == time.strftime("%H:%M"):
                 if lesson.week == 3 or lesson.week == int(time.strftime("%W")) % 2:
-                    chat_id = -1001367674629
+                    chat_id = -1001187367399
                     resp = bot.send_message(chat_id, lesson.name + '\n' + lesson.zoom)
                     if resp.status_code == 200:
                         time.sleep(70)
