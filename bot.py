@@ -1,5 +1,4 @@
 import requests
-import schedule
 import custom_schedule
 import time
 
