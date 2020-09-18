@@ -43,7 +43,7 @@ def main():
     while True:
         time.sleep(1)
         for lesson in lessons:
-            if lesson.day == time.strftime("%w") and lesson.time == (str(int(time.strftime("%H"))-3)+time.strftime(":%M")):
+            if lesson.day == time.strftime("%w") and lesson.time == (str(int(time.strftime("%H"))+3)+time.strftime(":%M")):
                 if lesson.week == 3 or lesson.week == int(time.strftime("%W")) % 2:
                     resp = bot.send_message(lesson.name + '\n' + lesson.zoom)
                     bot.pin_message(int(resp.json()["result"]["message_id"]))
