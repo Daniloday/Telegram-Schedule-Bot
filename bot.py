@@ -27,7 +27,7 @@ class TelegramBot():
         return response
 
     def pin_message(self,message_id):
-        params = {'chat_id' : self.chat_id, 'message_id' : message_id}
+        params = {'chat_id' : self.chat_id, 'message_id' : message_id,"disable_notification" : False}
         response = requests.post(self.url + 'pinChatMessage', data=params)
         return response
 
