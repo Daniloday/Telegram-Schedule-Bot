@@ -6,8 +6,8 @@ class TelegramBot():
 
     def __init__(self, url):
         self.url = url
-        self.chat_id = -1001367674629
-        # chat_id = -1001187367399
+        self.chat_id = -1001187367399
+        # chat_id = -1001367674629
 
     def get_updates(self):
         response = requests.get(self.url + 'getUpdates')

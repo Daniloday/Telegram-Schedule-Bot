@@ -26,7 +26,7 @@ def create_schedule():
         Lesson( name = 'СРОМ 1 (лекция) | Завадская Л.О.', week = 3, day = '4', time = "12:10", zoom = "https://us04web.zoom.us/j/3908947683?pwd=UWhmb1B0NDZSU3dZc3ZVL0RaSUJqdz09"), 
 
         Lesson( name = 'СРОМ 1 (лабы) | Пекарчук Нина', week = 0, day = '5', time = "08:20", zoom = "https://us04web.zoom.us/j/8397990765?pwd=dUMzWk1hSWx2RWtrTTRHalNObXhWUT09 но это не точно"), 
-        Lesson( name = 'СРОМ 2 (ОАОАОАААО) (лекция) | Сенсей', week = 3, day = '5', time = "14:13", zoom = "https://us04web.zoom.us/j/71468510955?pwd=N3NuVm9vMThUVzluSTlCdXF0YW5mUT09"), 
+        Lesson( name = 'СРОМ 2 (ОАОАОАААО) (лекция) | Сенсей', week = 3, day = '5', time = "10:15", zoom = "https://us04web.zoom.us/j/71468510955?pwd=N3NuVm9vMThUVzluSTlCdXF0YW5mUT09"), 
         Lesson( name = 'СРОМ 1 (практика) | Завадская Л.О.', week = 0, day = '5', time = "12:10", zoom = "https://us04web.zoom.us/j/3908947683?pwd=UWhmb1B0NDZSU3dZc3ZVL0RaSUJqdz09"), 
         )
     return schedule
