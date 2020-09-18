@@ -7,6 +7,7 @@ class TelegramBot():
     def __init__(self, url):
         self.url = url
         self.chat_id = -1001367674629
+        # chat_id = -1001187367399
 
     def get_updates(self):
         response = requests.get(self.url + 'getUpdates')
@@ -20,14 +21,20 @@ class TelegramBot():
     def get_last_chat_id(self):
         return self.last_update()['message']['chat']['id']
 
-    def send_message(self, chat_id, text):
-        params = {'chat_id' : chat_id, 'text' : text}
+    def send_message(self, text):
+        params = {'chat_id' : self.chat_id, 'text' : text}
         response = requests.post(self.url + 'sendMessage', data=params)
         return response
 
+    def pin_message(self,message_id):
+        params = {'chat_id' : self.chat_id, 'message_id' : message_id}
+        response = requests.post(self.url + 'pinChatMessage', data=params)
+        return response
+
+
 def send(bot):
-    chat_id = -1001187367399
-    bot.send_message(chat_id, "Hello world!")
+    resp = bot.send_message("Hello world!")
+    bot.pin_message(int(resp.json()["result"]["message_id"]))
 
 def main():
     bot = TelegramBot("https://api.telegram.org/bot1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs/")
@@ -36,10 +43,10 @@ def main():
     while True:
         time.sleep(1)
         for lesson in lessons:
-            if lesson.day == time.strftime("%w") and lesson.time == time.strftime("%H:%M"):
+            if lesson.day == time.strftime("%w") and lesson.time == (str(int(time.strftime("%H"))-3)+time.strftime(":%M")):
                 if lesson.week == 3 or lesson.week == int(time.strftime("%W")) % 2:
-                    chat_id = -1001187367399
-                    resp = bot.send_message(chat_id, lesson.name + '\n' + lesson.zoom)
+                    resp = bot.send_message(lesson.name + '\n' + lesson.zoom)
+                    bot.pin_message(int(resp.json()["result"]["message_id"]))
                     if resp.status_code == 200:
                         time.sleep(70)
 
