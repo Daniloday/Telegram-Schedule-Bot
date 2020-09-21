@@ -34,7 +34,7 @@ class TelegramBot():
 
 def send(bot):
     chat_id = -1001367674629
-    resp = bot.send_message("Start in FI-83!. Time: " + (str(int(time.strftime("%H"))+3)+time.strftime(":%M"), chat_id)
+    resp = bot.send_message("Start in FI-83!. Time: " + (str(int(time.strftime("%H"))+3)+time.strftime(":%M"), chat_id))
     # bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
 
 def main():
