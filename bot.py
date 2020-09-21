@@ -26,8 +26,8 @@ class TelegramBot():
         response = requests.post(self.url + 'sendMessage', data=params)
         return response
 
-    def pin_message(self,message_id):
-        params = {'chat_id' : self.chat_id, 'message_id' : message_id, "disable_notification" : False}
+    def pin_message(self, message_id, chat_id):
+        params = {'chat_id' : chat_id, 'message_id' : message_id, "disable_notification" : False}
         response = requests.post(self.url + 'pinChatMessage', data=params)
         return response
 
@@ -35,7 +35,7 @@ class TelegramBot():
 def send(bot):
     chat_id = -1001367674629
     resp = bot.send_message("Start in FI-83!", chat_id)
-    bot.pin_message(int(resp.json()["result"]["message_id"]))
+    bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
 
 def main():
     bot = TelegramBot("https://api.telegram.org/bot1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs/")
@@ -46,8 +46,9 @@ def main():
         for lesson in lessons:
             if lesson.day == time.strftime("%w") and lesson.time == (str(int(time.strftime("%H"))+3)+time.strftime(":%M")):
                 if lesson.week == 3 or lesson.week == int(time.strftime("%W")) % 2:
-                    resp = bot.send_message(lesson.name + '\n' + lesson.zoom, 1001187367399)
-                    bot.pin_message(int(resp.json()["result"]["message_id"]))
+                    chat_id = 1001187367399
+                    resp = bot.send_message(lesson.name + '\n' + lesson.zoom, chat_id)
+                    bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
                     if resp.status_code == 200:
                         time.sleep(70)
 
