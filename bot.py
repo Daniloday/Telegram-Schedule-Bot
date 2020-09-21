@@ -35,7 +35,7 @@ class TelegramBot():
 def send(bot):
     chat_id = -1001367674629
     resp = bot.send_message("Start in FI-83!", chat_id)
-    bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
+    # bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
 
 def main():
     bot = TelegramBot("https://api.telegram.org/bot1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs/")
@@ -48,7 +48,7 @@ def main():
                 if lesson.week == 3 or lesson.week == int(time.strftime("%W")) % 2:
                     chat_id = 1001187367399
                     resp = bot.send_message(lesson.name + '\n' + lesson.zoom, chat_id)
-                    bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
+                    # bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
                     if resp.status_code == 200:
                         time.sleep(70)
 
