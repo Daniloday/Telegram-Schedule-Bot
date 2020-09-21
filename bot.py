@@ -46,9 +46,9 @@ def main():
         for lesson in lessons:
             if lesson.day == time.strftime("%w") and lesson.time == (str(int(time.strftime("%H"))+3)+time.strftime(":%M")):
                 if lesson.week == 3 or lesson.week == int(time.strftime("%W")) % 2:
-                    chat_id = 1001187367399
+                    chat_id = -1001187367399
                     resp = bot.send_message(lesson.name + '\n' + lesson.zoom, chat_id)
-                    # bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
+                    bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
                     if resp.status_code == 200:
                         time.sleep(70)
 

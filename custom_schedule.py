@@ -10,7 +10,7 @@ def create_schedule():
     schedule = (
         Lesson( name = 'СРОМ 2 (практика) | Черный Олег', week = 0, day = '1', time = "08:20", zoom = "https://us04web.zoom.us/j/2625120734?pwd=K0QrcXN4ekcrbDZKRW15Z1NVUSs3UT09"), 
         Lesson( name = 'Теор.вер (лекция) | Дор А.А', week = 3, day = '1', time = "10:15", zoom = "Пару я дал, а ссылку я не дам"), 
-        Lesson( name = 'Мат.мод (лекция) | Смирнов С.А', week = 3, day = '1', time = "12:15", zoom = "https://meet.google.com/lookup/dypflshjwm?authuser=0&hs=179"), 
+        Lesson( name = 'Мат.мод (лекция) | Смирнов С.А', week = 3, day = '1', time = "12:30", zoom = "https://meet.google.com/lookup/dypflshjwm?authuser=0&hs=179"), 
         Lesson( name = 'English | Синекоп', week = 3, day = '1', time = "14:05", zoom = "https://us04web.zoom.us/j/9822532040?pwd=c21vVFBxbDcyNldYYmxBK3c0ckZXdz09"),
 
         Lesson( name = 'Методы оптимизаций (лекция) | Дед Данилов В.Я', week = 3, day = '2', time = "10:15", zoom = "Галя, сделай постоянную ссылку"), 
