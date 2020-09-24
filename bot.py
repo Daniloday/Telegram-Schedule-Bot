@@ -35,7 +35,7 @@ class TelegramBot():
 def send(bot):
     chat_id = -1001367674629
     resp = bot.send_message("Started in FI-83! Time: " + (str(int(time.strftime("%H"))+3)+time.strftime(":%M")) + '\n Week: ' + str(int(time.strftime("%W")) % 2), chat_id)
-    # bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id) kek
+    # bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
 
 def main():
     bot = TelegramBot("https://api.telegram.org/bot1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs/")
