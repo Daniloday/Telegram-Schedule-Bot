@@ -1,7 +1,6 @@
 import requests
 import custom_schedule
 import time
-from PIL import Image
 
 class TelegramBot():
 
