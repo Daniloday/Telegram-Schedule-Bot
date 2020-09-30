@@ -33,7 +33,7 @@ class TelegramBot():
 
     def send_photo(self, path, chat_id):
         photo = open(path, 'rb')
-        params = {'chat_id' : chat_id, 'photo' : photo}
+        params = {'chat_id' : chat_id, 'text' : photo}
         response = requests.post(self.url + 'sendMessage', data=params)
         return response
 
