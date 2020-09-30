@@ -31,11 +31,18 @@ class TelegramBot():
         response = requests.post(self.url + 'pinChatMessage', data=params)
         return response
 
+    def send_photo(self, path, chat_id):
+        photo = open(path, 'rb')
+        params = {'chat_id' : chat_id, 'photo' : photo}
+        response = requests.post(self.url + 'sendMessage', data=params)
+        return response
+
+
 
 def send(bot):
     chat_id = -1001367674629
-    resp = bot.send_message("Started in FI-83! Time: " + (str(int(time.strftime("%H"))+3)+time.strftime(":%M")) + '\n Week: ' + str(int(time.strftime("%W")) % 2), chat_id)
-    # bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
+    bot.send_message("Started in FI-83! Time: " + (str(int(time.strftime("%H"))+3)+time.strftime(":%M")) + '\n Week: ' + str(int(time.strftime("%W")) % 2), chat_id)
+    bot.send_photo('1.png', chat_id)
 
 def main():
     bot = TelegramBot("https://api.telegram.org/bot1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs/")
