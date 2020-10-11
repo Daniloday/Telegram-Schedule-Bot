@@ -1,6 +1,7 @@
 import requests
 import custom_schedule
 import time
+import telepot
 
 class TelegramBot():
 
@@ -44,11 +45,10 @@ class TelegramBot():
 
 def send(bot):
     chat_id = -1001367674629
-    bot.send_message("Started in FI-83! Time: " + (str(int(time.strftime("%H"))+3)+time.strftime(":%M")) + '\n Week: ' + str(int(time.strftime("%W")) % 2), chat_id)
-    # bot.send_photo('1.png', chat_id)
+    bot.sendMessage(chat_id, "Started in FI-83! Time: " + (str(int(time.strftime("%H"))+3)+time.strftime(":%M")) + '\n Week: ' + str(int(time.strftime("%W")) % 2))
 
 def main():
-    bot = TelegramBot("https://api.telegram.org/bot1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs/")
+    bot = telepot.Bot("https://api.telegram.org/bot1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs/")
     lessons = custom_schedule.create_schedule()
     send(bot)
     while True:
@@ -57,7 +57,7 @@ def main():
             if lesson.day == time.strftime("%w") and lesson.time == (str(int(time.strftime("%H"))+3)+time.strftime(":%M")):
                 if lesson.week == 3 or lesson.week == int(time.strftime("%W")) % 2:
                     chat_id = -1001187367399
-                    resp = bot.send_message(lesson.name + '\n' + lesson.zoom, chat_id)
+                    resp = bot.sendMessage(chat_id, lesson.name + '\n' + lesson.zoom)
                     bot.pin_message(int(resp.json()["result"]["message_id"]), chat_id)
                     if resp.status_code == 200:
                         time.sleep(70)
