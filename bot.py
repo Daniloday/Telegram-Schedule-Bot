@@ -46,7 +46,7 @@ class TelegramBot():
 def send(bot):
     chat_id = -1001367674629
     bot.sendMessage(chat_id, "Started in FI-83! Time: " + (str(int(time.strftime("%H"))+3)+time.strftime(":%M")) + '\n Week: ' + str(int(time.strftime("%W")) % 2))
-    bot.sendPhoto(chat_id, photo=open('1.jpg', 'rb'))
+    # bot.sendPhoto(chat_id, photo=open('1.jpg', 'rb'))
 
 def main():
     bot = telepot.Bot("1112357683:AAHsOL-X4oOku65teNY074LZuHbHdIFfGSs")
@@ -59,7 +59,10 @@ def main():
                 if lesson.week == 3 or lesson.week == int(time.strftime("%W")) % 2:
                     chat_id = -1001187367399
                     resp = bot.sendMessage(chat_id, lesson.name + '\n' + lesson.zoom)
+                    time.sleep(1)
                     bot.pinChatMessage(message_id = int(resp.json()["result"]["message_id"]), chat_id = chat_id)
+                    # if lesson.name == 'Мат.прога | Хмельницкий':
+                        # bot.sendPhoto(chat_id, photo=open('1.jpg', 'rb'))
                     if resp.status_code == 200:
                         time.sleep(70)
 

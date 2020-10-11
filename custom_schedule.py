@@ -19,7 +19,7 @@ def create_schedule():
         Lesson( name = 'Теория сложности (практика) | Фес Андрей', week = 0, day = '3', time = "8:20", zoom = "https://us04web.zoom.us/j/3033669459?pwd=N0ovVUV3dTQ4N2xmaDBpTTdCQ3BBUT09"), 
         Lesson( name = 'Методы оптимизаций (практика) | Дед Данилов В.Я', week = 3, day = '3', time = "10:15", zoom = "https://us04web.zoom.us/j/77043249383?pwd=ZkN5amE3RFFPT3IyalZENTQ3QVl2dz09"), 
         Lesson( name = 'QAQC (лекция) | Ткач В.М', week = 1, day = '3', time = "12:10", zoom = "https://bth.zoom.us/j/62733592448"), 
-        Lesson( name = 'Мат.прога | Хмельницкий ', week = 3, day = '3', time = "14:05", zoom = "Пару я дал, а ссылку я не дам \n В группе мат.прога (там даже ссылки на группу нет)"),
+        Lesson( name = 'Мат.прога | Хмельницкий', week = 3, day = '3', time = "14:05", zoom = "Пару я дал, а ссылку я не дам \n В группе мат.прога (там даже ссылки на группу нет)"),
 
         Lesson( name = 'Теория сложности (лекция) | Фес Андрей', week = 3, day = '4', time = "8:20", zoom = "https://us04web.zoom.us/j/3033669459?pwd=N0ovVUV3dTQ4N2xmaDBpTTdCQ3BBUT09"), 
         Lesson( name = 'Теор.вер (практика) | Нищенко И.И', week = 3, day = '4', time = "10:15", zoom = "https://us02web.zoom.us/j/82678565122"), 
