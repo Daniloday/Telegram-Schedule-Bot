@@ -22,7 +22,7 @@ def main():
                 if lesson.week == 3 or lesson.week == int(time.strftime("%W")) % 2:
                     chat_id = -1001187367399
                     message_id = bot.sendMessage(chat_id, lesson.name + '\n' + lesson.zoom).message_id
-                    bot.pinChatMessage(chat_id = chat_id, message_id = message_id)
+                    # bot.pinChatMessage(chat_id = chat_id, message_id = message_id)
                     # if lesson.name == 'Мат.прога | Хмельницкий':
                         # bot.sendPhoto(chat_id, photo=open('1.jpg', 'rb'))
                     # if message_id != None:
