@@ -24,7 +24,7 @@ def main():
                     bot.sendMessage(chat_id, lesson.name + '\n' + lesson.zoom)
                     # bot.pinChatMessage(chat_id = chat_id, message_id = message_id)
                     if lesson.name == 'Мат.прога | Хмельницкий':
-                        bot.sendPhoto(chat_id, photo=open('1.jpg', 'rb'))
+                        bot.sendPhoto(chat_id, photo=open('2.jpg', 'rb'))
                     # if message_id != None:
                     time.sleep(70)
                         
